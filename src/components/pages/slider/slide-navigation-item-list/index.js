@@ -1,1 +1,1 @@
-export { default } from './slide-navigation-items-list';
+export { default } from './slide-navigation-item-list';

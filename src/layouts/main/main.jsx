@@ -5,7 +5,6 @@ import Header from 'components/shared/header';
 
 const MainLayout = ({ children }) => (
   <>
-    <Header />
     <main>{children}</main>
   </>
 );
