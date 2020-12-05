@@ -1,0 +1,39 @@
+.title {
+  position: absolute;
+  top: 213px;
+  left: calc(50% - 171px / 2 - 395.5px);
+  width: 171px;
+  height: 26px;
+  //   font-family: "Playfair Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 130%;
+  color: $color-primary;
+  text-align: right;
+}
+
+.icon-wrapper {
+  position: absolute;
+  top: 4.17%;
+  right: 4.17%;
+  bottom: 4.17%;
+  left: 4.17%;
+  width: 66px;
+  height: 66px;
+  background: $color-secondary;
+  border: 3px solid #5c5c8a;
+  border-radius: 50%;
+}
+
+.icon-wrapper-active {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  width: 60px;
+  height: 60px;
+  background: $color-primary;
+  border-radius: 50%;
+}
