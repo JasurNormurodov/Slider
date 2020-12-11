@@ -1,0 +1,102 @@
+.slider-navigation-item {
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+
+  &:nth-of-type(1) {
+    margin-top: 190px;
+  }
+
+  h4 {
+    margin: 0 0 0 auto;
+    font-family: $font-family-secondary;
+    font-size: 20px;
+    line-height: 26px;
+    cursor: pointer;
+  }
+
+  .icon-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 72px;
+    height: 72px;
+    margin-left: 30px;
+    text-align: center;
+    cursor: pointer;
+    background: $color-secondary;
+    border: 3px solid #5c5c8a;
+    border-radius: 50%;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+
+    .clickHandler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      border-radius: 50%;
+    }
+  }
+
+  .icon-wrapper-active {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin: 6px 6px 6px 36px;
+    text-align: center;
+    cursor: pointer;
+    background: $color-primary;
+    border-radius: 50%;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+
+    .clickHandler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      border-radius: 50%;
+    }
+
+    svg {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 76px;
+      height: 76px;
+      transform: rotate(-90deg);
+
+      circle {
+        fill: none;
+        stroke: #f20d59;
+        stroke-dasharray: 219.55618286132812;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        stroke-width: 3;
+        animation: percent 5s linear;
+      }
+    }
+  }
+}
+
+@keyframes percent {
+  0% {
+    stroke-dashoffset: 219.55618286132812;
+  }
+}

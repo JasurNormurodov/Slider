@@ -1,0 +1,49 @@
+.content {
+  z-index: 1;
+  width: 480px;
+  margin-right: 470px;
+
+  h2 {
+    margin: 91px 0 14px;
+    font-family: $font-family-secondary;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 60px;
+  }
+
+  p {
+    margin: 0;
+    font-family: $font-family-tertiary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.8px;
+    color: $color-content-description;
+  }
+
+  .maket {
+    position: relative;
+    width: 100%;
+    margin-top: 45px;
+
+    .panel {
+      width: 100%;
+      margin: -15px -20px -10px;
+    }
+
+    .dot-pattern-up {
+      position: absolute;
+      top: -12px;
+      right: -58px;
+      width: 145px;
+      height: 145px;
+    }
+
+    .dot-pattern-down {
+      position: absolute;
+      bottom: 2px;
+      left: -48px;
+      width: 145px;
+      height: 145px;
+    }
+  }
+}

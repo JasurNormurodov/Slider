@@ -5,6 +5,8 @@ $color-tertiary: #f1f1f9;
 
 $color-light-red: #f20d59;
 $color-violet: #330df2;
+$color-gray: #5c5c8a;
+$color-content-description: #dbdbf0;
 
 $color-accent-primary: '';
 $color-accent-secondary: '';
@@ -14,8 +16,9 @@ $color-accent-primary-hover: '';
 $color-accent-secondary-hover: '';
 
 // Fonts
-$font-family-primary: '';
-$font-family-secondary: '';
+$font-family-primary: 'Gotham', sans-serif;
+$font-family-secondary: 'Playfair Display';
+$font-family-tertiary: 'Gotham';
 
 $font-size-base: '';
 $line-height-base: '';

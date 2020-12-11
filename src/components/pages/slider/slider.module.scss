@@ -1,23 +1,24 @@
 .slider {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 1920px / 2);
+  display: flex;
+  justify-content: space-between;
   width: 1920px;
   height: 750px;
   background: $color-secondary;
 
-  .leftBackgroundShape {
-    position: absolute;
+  .left-background-shape {
+    position: absolute !important;
     top: 60px;
     left: calc(50% - 630px / 2 - 405px);
+    z-index: 1;
     width: 630px;
     height: 630px;
   }
 
-  .rightBackgroundShape {
+  .right-background-shape {
     position: absolute !important;
     top: 60px;
     left: calc(50% - 690px / 2 + 415px);
+    z-index: 1;
     width: 690px;
     height: 630px;
   }

@@ -8,3 +8,19 @@
 //   font-style: normal;
 //   font-display: swap;
 // }
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display-black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/gotham-book.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}

@@ -2,80 +2,60 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 
-import SlideNavigationItem from '../slide-navigation-item/index';
+import capacityActive from '../../../../images/pages/navigation-icons/capacity-active.svg';
+import capacity from '../../../../images/pages/navigation-icons/capacity.svg';
+import communicationActive from '../../../../images/pages/navigation-icons/communication-active.svg';
+import communication from '../../../../images/pages/navigation-icons/communication.svg';
+import managementActive from '../../../../images/pages/navigation-icons/management-active.svg';
+import management from '../../../../images/pages/navigation-icons/management.svg';
+import scheduleActive from '../../../../images/pages/navigation-icons/schedule-active.svg';
+import schedule from '../../../../images/pages/navigation-icons/schedule.svg';
+import SlideNavigationItem from '../slide-navigation-item';
 
-import * as styles from './slide-navigation-item-list.scss';
+import * as styles from './slide-navigation-item-list.module.scss';
 
-// import capacityActive from './images/capacity-active.png';
-// import capacity from './images/capacity.png';
-// import communicationActive from './images/communication-active.png';
-// import communication from './images/communication.png';
-// import managementActive from './images/management-active.png';
-// import management from './images/management.png';
-// import scheduleActive from './images/schedule-active.png';
-// import schedule from './images/schedule.png';
+export default ({ active, setActive }) => {
+  // const data = useStaticQuery(
+  //   graphql`
+  //     query navigationIcons {
+  //       allFile(
+  //         sort: { order: ASC, fields: base }
+  //         filter: { relativePath: { regex: "/(navigation-icons)/" } }
+  //       ) {
+  //         edges {
+  //           node {
+  //             childImageSharp {
+  //               fluid(maxWidth: 30) {
+  //                 ...GatsbyImageSharpFluid_noBase64
+  //               }
+  //             }
+  //             id
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
 
-export default ({ active }) => {
-  const data = useStaticQuery(
-    graphql`
-      query NavigationItemsList {
-        allFile(
-          filter: {
-            relativePath: {}
-            name: {}
-            absolutePath: { regex: "/slide-navigation-item-list/images/" }
-          }
-          sort: { order: ASC, fields: base }
-        ) {
-          edges {
-            node {
-              id
-              base
-              childImageSharp {
-                fixed(width: 30, height: 30) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-  const iconsArray = data.allFile.edges;
-  console.log(iconsArray);
-  const NAVIGATION_ITEMS = [
-    { title: 'Capacity planning', iconActive: iconsArray[0], icon: iconsArray[1] },
-    { title: 'Staggered schedules', iconActive: iconsArray[6], icon: iconsArray[7] },
-    { title: 'PPE management', iconActive: iconsArray[4], icon: iconsArray[5] },
-    { title: 'Employee communication', iconActive: iconsArray[2], icon: iconsArray[3] },
+  const navigationItemsArray = [
+    { title: 'Capacity planning', icon: capacity, iconActive: capacityActive },
+    { title: 'Staggered schedules', icon: schedule, iconActive: scheduleActive },
+    { title: 'PPE management', icon: management, iconActive: managementActive },
+    { title: 'Employee communication', icon: communication, iconActive: communicationActive },
   ];
-  const navigationItems = NAVIGATION_ITEMS.map((item) => {
-    const isIconActive = item.title === active;
-    const icon = isIconActive ? item.iconActive.node : item.icon.node;
-    console.log(item.title, active);
 
-    return (
-      <SlideNavigationItem key={icon.id} title={item.title}>
-        <Img
-          // className={isIconActive ? styles.iconWrapperActive : styles.iconWrapper}
-          className={{
-            position: 'absolute',
-            top: '4.17%',
-            right: '4.17%',
-            bottom: '4.17%',
-            left: '4.17%',
-            width: '66px',
-            height: '66px',
-            background: '$color-secondary',
-            border: '3px solid #5c5c8a',
-            borderRadius: '50%',
-          }}
-          fixed={icon.childImageSharp.fixed}
-        />
-      </SlideNavigationItem>
-    );
-  });
+  const navigationItems = navigationItemsArray.map((item) => (
+    <SlideNavigationItem
+      key={item.title}
+      params={{
+        title: item.title,
+        icon: item.icon,
+        iconActive: item.iconActive,
+        isActive: active === item.title,
+        setActive,
+      }}
+    />
+  ));
 
-  return <>{navigationItems}</>;
+  return <div className={styles.sliderNavigationItemList}>{navigationItems}</div>;
 };
