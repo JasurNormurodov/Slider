@@ -1,13 +1,5 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-
-// import capacityActive from '../../../../images/pages/navigation-icons/capacity-active.svg';
-// import capacity from '../../../../images/pages/navigation-icons/capacity.svg';
-// import communicationActive from '../../../../images/pages/navigation-icons/communication-active.svg';
-// import communication from '../../../../images/pages/navigation-icons/communication.svg';
-// import managementActive from '../../../../images/pages/navigation-icons/management-active.svg';
-// import management from '../../../../images/pages/navigation-icons/management.svg';
-// import scheduleActive from '../../../../images/pages/navigation-icons/schedule-active.svg';
-// import schedule from '../../../../images/pages/navigation-icons/schedule.svg';
 
 import SlideNavigationItem from '../slide-navigation-item';
 
@@ -21,7 +13,7 @@ import scheduleActive from './images/schedule-active.svg';
 import schedule from './images/schedule.svg';
 import * as styles from './slide-navigation-item-list.module.scss';
 
-export default ({ active, setActive }) => {
+const SlideNavigationItemList = ({ active, setActive }) => {
   const navigationItemsArray = [
     {
       title: 'Capacity planning',
@@ -65,3 +57,8 @@ export default ({ active, setActive }) => {
 
   return <div className={styles.sliderNavigationItemList}>{navigationItems}</div>;
 };
+SlideNavigationItemList.propTypes = {
+  active: PropTypes.string.isRequired,
+  setActive: PropTypes.func.isRequired,
+};
+export default SlideNavigationItemList;

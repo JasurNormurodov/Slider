@@ -34,7 +34,7 @@
     .panelFade {
       width: 100%;
       margin: -15px -20px -10px;
-      animation: fade 1s;
+      animation: fade 1s linear;
     }
 
     .dot-pattern-up {

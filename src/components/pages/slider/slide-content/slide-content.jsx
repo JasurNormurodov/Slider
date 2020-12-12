@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
-// import dotPattern from '../../../../images/pages/dot-pattern.svg';
 import DotPattern from './images/dot-pattern.inline.svg';
 import * as styles from './slide-content.module.scss';
 
@@ -24,6 +24,15 @@ const SlideContent = ({ params }) => {
       </div>
     </div>
   );
+};
+
+SlideContent.propTypes = {
+  params: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.node.isRequired,
+    isPatternUp: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default SlideContent;
