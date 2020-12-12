@@ -2,8 +2,6 @@
   z-index: 1;
   width: 480px;
   margin-right: 470px;
-  //   transition-duration: 40s;
-  //   animation: fade-in 1s linear;
 
   h2 {
     margin: 91px 0 14px;
@@ -55,10 +53,6 @@
       height: 145px;
     }
   }
-}
-
-.fade-in {
-  animation: fade-in 1s linear;
 }
 
 @keyframes fade-in {

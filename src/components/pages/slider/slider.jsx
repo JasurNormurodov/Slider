@@ -1,16 +1,11 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 import React, { useState, useEffect } from 'react';
 
-// import ProgressRing from './progress-ring/progress-ring';
-
-import leftBackgroundShape from '../../../images/pages/background/left-background-shape.svg';
-import rightBackgroundShape from '../../../images/pages/background/right-background-shape.svg';
-import capacityPanel from '../../../images/pages/panels/capacity-panel.svg';
-import communicationPanel from '../../../images/pages/panels/communication-panel.svg';
-import managementPanel from '../../../images/pages/panels/management-panel.svg';
-import schedulesPanel from '../../../images/pages/panels/schedules-panel.svg';
-
+import LeftBackgroundShape from './images/left-background-shape.inline.svg';
+import CapacityPanel from './images/panels/capacity-panel.inline.svg';
+import CommunicationPanel from './images/panels/communication-panel.inline.svg';
+import ManagementPanel from './images/panels/management-panel.inline.svg';
+import SchedulesPanel from './images/panels/schedules-panel.inline.svg';
+import RightBackgroundShape from './images/right-background-shape.inline.svg';
 import SlideContent from './slide-content';
 import SlideNavigationItemList from './slide-navigation-item-list';
 import * as styles from './slider.module.scss';
@@ -19,25 +14,25 @@ const content = {
   'Capacity planning': {
     description: `Set capacity limits and turn on alerts to limit access when the building reaches capacity.
   Ensure social distancing and avoid overcrowding.`,
-    image: capacityPanel,
+    image: <CapacityPanel />,
     patternUp: true,
   },
   'Staggered schedules': {
     description: `Create multiple user groups and assign staggered schedules to users.
    Deny access outside of a set schedule. Change and update schedules easily 
    that employees can check from the app.`,
-    image: schedulesPanel,
+    image: <SchedulesPanel />,
     patternUp: false,
   },
   'PPE management': {
     description: `Keep track of all your critical PPE inventory. Prioritize and track PPE allocation to highest at-risk employees.`,
-    image: managementPanel,
+    image: <ManagementPanel />,
     patternUp: true,
   },
   'Employee communication': {
     description: `Send out timely announcements for COVID-19 health-related news and guidelines, directly in the app. Ensure employees update critical contacts in case
   of emergency.`,
-    image: communicationPanel,
+    image: <CommunicationPanel />,
     patternUp: false,
   },
 };
@@ -57,37 +52,17 @@ const Slider = () => {
     };
   }, [active, keys]);
 
-  const data = useStaticQuery(
-    graphql`
-      query backgroundImages {
-        allFile(
-          sort: { order: ASC, fields: base }
-          filter: { relativePath: { regex: "/(background)/" } }
-        ) {
-          edges {
-            node {
-              childImageSharp {
-                fixed(height: 630) {
-                  ...GatsbyImageSharpFixed
-                }
-                id
-              }
-            }
-          }
-        }
-      }
-    `
-  );
   return (
     <div className={styles.slider}>
-      <img alt="" className={styles.leftBackgroundShape} src={leftBackgroundShape} />
-      <img alt="" className={styles.rightBackgroundShape} src={rightBackgroundShape} />
+      <LeftBackgroundShape className={styles.leftBackgroundShape} />
+      <RightBackgroundShape className={styles.rightBackgroundShape} />
+
       <SlideNavigationItemList setActive={setActive} active={active} />
       <SlideContent
         params={{
           title: active,
           description: content[active].description,
-          panel: content[active].image,
+          image: content[active].image,
           isPatternUp: content[active].patternUp,
         }}
       />

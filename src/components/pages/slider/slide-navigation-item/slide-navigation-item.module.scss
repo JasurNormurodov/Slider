@@ -29,6 +29,7 @@
     background: $color-secondary;
     border: 3px solid #5c5c8a;
     border-radius: 50%;
+    animation: fade 0.5s linear;
 
     .icon {
       width: 30px;
@@ -104,6 +105,16 @@
 }
 
 @keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
   0% {
     opacity: 0;
   }
