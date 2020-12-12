@@ -57,7 +57,7 @@ typings/
 
 # gatsby files
 .cache/
-public
+public/
 
 # Mac files
 .DS_Store
@@ -70,3 +70,5 @@ yarn-error.log
 .yarn-integrity
 
 .vscode/snipsnap.code-snippets
+# Local Netlify folder
+.netlify
