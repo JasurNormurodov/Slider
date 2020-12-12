@@ -9,6 +9,7 @@
   }
 
   h4 {
+    z-index: 1;
     margin: 0 0 0 auto;
     font-family: $font-family-secondary;
     font-size: 20px;
@@ -57,6 +58,7 @@
     cursor: pointer;
     background: $color-primary;
     border-radius: 50%;
+    animation: fade-in 0.5s linear;
 
     .icon {
       width: 30px;
@@ -98,5 +100,15 @@
 @keyframes percent {
   0% {
     stroke-dashoffset: 219.55618286132812;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

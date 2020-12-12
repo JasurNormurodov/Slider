@@ -43,17 +43,14 @@ const content = {
 };
 
 const Slider = () => {
-  // const [activeIndex, setActiveIndex] = useState(0);
   const keys = Object.keys(content);
   const [active, setActive] = useState(keys[0]);
-  console.log(active);
 
   useEffect(() => {
     const timer = setInterval(() => {
       const location = keys.indexOf(active);
       const nextIndex = location === keys.length - 1 ? 0 : location + 1;
       setActive(keys[nextIndex]);
-      console.log('In timer');
     }, 5000);
     return () => {
       clearInterval(timer);

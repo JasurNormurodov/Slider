@@ -9,7 +9,7 @@
     position: absolute !important;
     top: 60px;
     left: calc(50% - 630px / 2 - 405px);
-    z-index: 1;
+    // z-index: 0;
     width: 630px;
     height: 630px;
   }
@@ -18,8 +18,22 @@
     position: absolute !important;
     top: 60px;
     left: calc(50% - 690px / 2 + 415px);
-    z-index: 1;
+    // z-index: 0;
     width: 690px;
     height: 630px;
+  }
+}
+
+.fade-in {
+  animation: fade-in 3s linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

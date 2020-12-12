@@ -38,10 +38,20 @@ export default ({ active, setActive }) => {
   // );
 
   const navigationItemsArray = [
-    { title: 'Capacity planning', icon: capacity, iconActive: capacityActive },
-    { title: 'Staggered schedules', icon: schedule, iconActive: scheduleActive },
-    { title: 'PPE management', icon: management, iconActive: managementActive },
-    { title: 'Employee communication', icon: communication, iconActive: communicationActive },
+    { title: 'Capacity planning', icon: capacity, iconActive: capacityActive, style: {} },
+    { title: 'Staggered schedules', icon: schedule, iconActive: scheduleActive, style: {} },
+    {
+      title: 'PPE management',
+      icon: management,
+      iconActive: managementActive,
+      style: { width: '25px' },
+    },
+    {
+      title: 'Employee communication',
+      icon: communication,
+      iconActive: communicationActive,
+      style: { height: '25px' },
+    },
   ];
 
   const navigationItems = navigationItemsArray.map((item) => (
@@ -51,6 +61,7 @@ export default ({ active, setActive }) => {
         title: item.title,
         icon: item.icon,
         iconActive: item.iconActive,
+        style: item.style,
         isActive: active === item.title,
         setActive,
       }}
