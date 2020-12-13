@@ -4,4 +4,6 @@ This section contains a slider that has an autoplay option and a progress circle
 
 We can click anytime to any item from the left list and autoplay should continue from that step.
 
+Demo
+
 Working demo: https://slider-test-task.netlify.app
