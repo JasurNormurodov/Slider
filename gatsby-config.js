@@ -6,7 +6,6 @@ module.exports = {
     siteDescription: 'Site Description',
     // pathPrefix: "",
     siteImage: '/images/sample-image.png',
-    leftBackgroundShapeImage: '/src/components/pages/slider/images/left-background-shape.png',
     siteLanguage: 'en',
     siteUrl: process.env.GATSBY_DEFAULT_SITE_URL,
     /* author */
